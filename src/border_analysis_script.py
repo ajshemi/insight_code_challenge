@@ -4,7 +4,7 @@ import os
 from itertools import product
 from border_analysis_functions_script import *
 
-directory='/home/asmsclique/insight/input/'
+directory=os.getcwd()+'/input/'
 
 measures=unique_list('Measure', directory+'Border_Crossing_Entry_Data.csv')
 borders=unique_list('Border', directory+'Border_Crossing_Entry_Data.csv')
@@ -98,11 +98,12 @@ with open(directory+'result_2_.csv','r') as csvfile:
             csvwriter.writerow({'Border':line['Border'],'Date': line['Date'],'Measure':line['Measure'],'Value':int(totals_list[count]),'Average':averages_list[count]})
             count+=1
 
-            
+#sort table by Date, Value, Measure and Border            
 sort_column('Date','Value','Measure','Border',directory+'result_2_sum_ave')
 
 
-directory_output='/home/asmsclique/insight/output/'
+#change date format, then save table to output file
+directory_output=os.getcwd()+'/output/'
 #try:
 #    with open(directory_output+'report.csv','r') as readcsv:
 #        csvreader=csv.DictReader(csvfile)
