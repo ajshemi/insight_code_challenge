@@ -20,6 +20,6 @@ cp ~/insight/Border_Crossing_Entry_Data.csv ~/insight/insight_testsuite/tests/te
 
 rm -rf Border_Crossing_Entry_Data.csv
 
-python ~/insight/src/border_analysis_script.py
+python ~/insight/src/border_analysis_script_.py
 
 
